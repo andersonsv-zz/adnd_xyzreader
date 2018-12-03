@@ -67,13 +67,13 @@ public class ItemsProvider extends ContentProvider {
     }
 
     @Override
-    public Uri insert(Uri uri, ContentValues values) {
+    public Uri insert(@NonNull Uri uri, ContentValues values) {
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         final int match = sUriMatcher.match(uri);
         switch (match) {
             case ITEMS: {
                 final long _id = db.insertOrThrow(Tables.ITEMS, null, values);
-                getContext().getContentResolver().notifyChange(uri, null);
+                Objects.requireNonNull(getContext()).getContentResolver().notifyChange(uri, null);
                 return ItemsContract.Items.buildItemUri(_id);
             }
             default: {
