@@ -16,10 +16,34 @@
 -->
 
 <resources>
-    <color name="photo_placeholder">#ccc</color>
 
-    <color name="theme_primary">#04561A</color>
-    <color name="theme_primary_dark">#04561A</color>
-    <color name="theme_accent">#04561A</color>
+    <color name="colorPrimary">#fa572f</color>
+    <color name="colorPrimaryDark">#bf1e00</color>
+    <color name="colorAccent">#4f9da6</color>
+
+    <color name="photo_placeholder">#ccc</color>
     <color name="ltgray">#ffe0e0e0</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="whiteFa">#fafafa</color>
+    <color name="white5">#0Dffffff</color>
+    <color name="white80">#ccffffff</color>
+    <color name="gray">#e5e5e5</color>
+    <color name="pinkishGrey">#cccccc</color>
+    <color name="whiteb3">#b3ffffff</color>
+    <color name="white70">#b3ffffff</color>
+    <color name="warmGrey">#999999</color>
+    <color name="grayOpacity50">#80e5e5e5</color>
+    <color name="warmGrey2">#979797</color>
+    <color name="lightGray">#999999</color>
+    <color name="warmGrey70">#b3999999</color>
+    <color name="midGray">#4a4a4a</color>
+    <color name="whiteFaWithShadow">#19000000</color>
+    <color name="black70">#b3000000</color>
+    <color name="black50">#7d000000</color>
+    <color name="black30">#4d000000</color>
+    <color name="black15">#27000000</color>
+    <color name="black5">#0e000000</color>
+    <color name="black">#000000</color>
 </resources>
