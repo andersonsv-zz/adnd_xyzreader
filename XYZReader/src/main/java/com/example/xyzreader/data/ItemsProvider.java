@@ -10,9 +10,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ItemsProvider extends ContentProvider {
     private SQLiteOpenHelper mOpenHelper;
@@ -41,7 +43,7 @@ public class ItemsProvider extends ContentProvider {
     }
 
     @Override
-    public String getType(Uri uri) {
+    public String getType(@NonNull Uri uri) {
         final int match = sUriMatcher.match(uri);
         switch (match) {
             case ITEMS:
@@ -59,7 +61,7 @@ public class ItemsProvider extends ContentProvider {
         final SelectionBuilder builder = buildSelection(uri);
         Cursor cursor = builder.where(selection, selectionArgs).query(db, projection, sortOrder);
         if (cursor != null) {
-            cursor.setNotificationUri(getContext().getContentResolver(), uri);
+            cursor.setNotificationUri(Objects.requireNonNull(getContext()).getContentResolver(), uri);
         }
         return cursor;
     }

@@ -8,6 +8,7 @@ import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -31,6 +32,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,11 +69,14 @@ public class ArticleListActivity extends AppCompatActivity implements
     // Most time functions can only handle 1902 - 2037
     private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2, 1, 1);
 
+    private boolean mIsRefreshing = false;
+
     private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             Log.e(TAG, "onReceive: " + intent);
-            switch (intent.getAction()) {
+
+            switch (Objects.requireNonNull(intent.getAction())) {
                 case UpdaterService.BROADCAST_ACTION_STATE_CHANGE:
                     updateRefreshingUI();
                     break;
@@ -79,8 +84,6 @@ public class ArticleListActivity extends AppCompatActivity implements
                     showNoNetworkMessage();
                     break;
             }
-
-
         }
     };
 
@@ -129,7 +132,6 @@ public class ArticleListActivity extends AppCompatActivity implements
     }
 
     private void updateRefreshingUI() {
-        boolean mIsRefreshing = false;
         mSwipeRefreshLayout.setRefreshing(mIsRefreshing);
     }
 

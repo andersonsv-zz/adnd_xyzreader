@@ -8,10 +8,7 @@ import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v13.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
@@ -74,7 +71,9 @@ public class ArticleDetailActivity extends AppCompatActivity
                 if (mCursor != null) {
                     mCursor.moveToPosition(position);
                 }
-                mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
+
+                if(mCursor != null)
+                mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID) ;
                 updateUpButtonPosition();
             }
         });

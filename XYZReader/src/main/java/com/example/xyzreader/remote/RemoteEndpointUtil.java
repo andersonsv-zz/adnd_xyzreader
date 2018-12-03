@@ -19,7 +19,7 @@ public class RemoteEndpointUtil {
     }
 
     public static JSONArray fetchJsonArray() {
-        String itemsJson = null;
+        String itemsJson;
         try {
             itemsJson = fetchPlainText();
         } catch (IOException e) {
