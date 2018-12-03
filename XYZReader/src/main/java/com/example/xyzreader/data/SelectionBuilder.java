@@ -136,7 +136,7 @@ public class SelectionBuilder {
      *
      * @see #getSelectionArgs()
      */
-    public String getSelection() {
+    private String getSelection() {
         if (mSelection != null) {
             return mSelection.toString();
         } else {

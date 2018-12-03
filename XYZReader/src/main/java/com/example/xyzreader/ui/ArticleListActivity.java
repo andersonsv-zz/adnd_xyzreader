@@ -67,8 +67,6 @@ public class ArticleListActivity extends AppCompatActivity implements
     // Most time functions can only handle 1902 - 2037
     private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2, 1, 1);
 
-    private boolean mIsRefreshing = false;
-
     private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -92,7 +90,6 @@ public class ArticleListActivity extends AppCompatActivity implements
                     @Override
                     public void onClick(View view) {
                         refresh();
-                        ;
                     }
                 });
         snackbar.show();
@@ -132,6 +129,7 @@ public class ArticleListActivity extends AppCompatActivity implements
     }
 
     private void updateRefreshingUI() {
+        boolean mIsRefreshing = false;
         mSwipeRefreshLayout.setRefreshing(mIsRefreshing);
     }
 
@@ -171,7 +169,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         @BindView(R.id.article_subtitle)
         TextView mSubtitle;
 
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
         }

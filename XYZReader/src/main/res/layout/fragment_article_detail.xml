@@ -64,12 +64,8 @@
                         android:id="@+id/article_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:lineSpacingMultiplier="0.9"
                         android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
-                        android:textSize="@dimen/detail_title_text_size"
-                        android:textStyle="bold"
-                        tools:text="Test" />
+                        style="@style/ArticleDetailTitle"/>
 
                     <TextView
                         android:id="@+id/article_byline"

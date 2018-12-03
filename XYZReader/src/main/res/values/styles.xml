@@ -39,4 +39,10 @@
         <item name="android:maxLines">2</item>
         <item name="android:textColor">@color/lightGray</item>
     </style>
+
+    <style name="ArticleDetailTitle" parent="@style/TextAppearance.AppCompat.Title.Inverse">
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:textSize">@dimen/detail_title_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
