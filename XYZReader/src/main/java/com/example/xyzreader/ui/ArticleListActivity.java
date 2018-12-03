@@ -7,12 +7,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
-import android.os.Binder;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -20,8 +18,6 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.util.Log;
-import android.util.TypedValue;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -76,7 +72,7 @@ public class ArticleListActivity extends AppCompatActivity implements
     private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Log.e(TAG, "onReceive: "+intent);
+            Log.e(TAG, "onReceive: " + intent);
             switch (intent.getAction()) {
                 case UpdaterService.BROADCAST_ACTION_STATE_CHANGE:
                     updateRefreshingUI();
@@ -95,7 +91,8 @@ public class ArticleListActivity extends AppCompatActivity implements
                 .setAction(R.string.offline_no_internet_retry, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        refresh();;
+                        refresh();
+                        ;
                     }
                 });
         snackbar.show();

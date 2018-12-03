@@ -31,4 +31,7 @@
     <dimen name="padding_40dp">40dp</dimen>
     <dimen name="padding_80dp">80dp</dimen>
 
+    <!-- card elevation -->
+    <dimen name="card_elevation">2dp</dimen>
+
 </resources>

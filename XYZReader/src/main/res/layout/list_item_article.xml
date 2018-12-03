@@ -39,6 +39,6 @@
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/padding_large"
             android:paddingRight="@dimen/padding_large"
-            android:paddingBottom="@dimen/padding_large"/>
+            android:paddingBottom="@dimen/padding_large" />
     </LinearLayout>
 </android.support.v7.widget.CardView>

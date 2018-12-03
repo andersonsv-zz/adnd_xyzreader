@@ -19,7 +19,7 @@
             android:paddingBottom="@dimen/padding_larger"
             android:paddingLeft="@dimen/padding_smaller"
             android:paddingRight="@dimen/padding_smaller"
-            android:scrollbarStyle="outsideOverlay"/>
+            android:scrollbarStyle="outsideOverlay" />
     </android.support.v4.widget.SwipeRefreshLayout>
 
 
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/logo"/>
+                android:src="@drawable/logo" />
 
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
