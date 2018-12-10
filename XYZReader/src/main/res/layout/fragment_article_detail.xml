@@ -1,12 +1,12 @@
 <com.example.xyzreader.ui.DrawInsetsFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/draw_insets_frame_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:clipToPadding="false"
-    app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+    app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+    android:elevation="@dimen/app_bar_elevation">
 
     <com.example.xyzreader.ui.ObservableScrollView
         android:id="@+id/scrollview"
@@ -18,24 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <FrameLayout
-                android:id="@+id/photo_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/photo_placeholder">
-                <!--suppress AndroidLintContentDescription -->
-                <ImageView
-                    android:id="@+id/photo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scaleType="centerCrop" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/detail_view_height"
-                    android:background="@drawable/photo_background_protection" />
-
-            </FrameLayout>
+            <include layout="@layout/fragment_article_top"/>
 
             <com.example.xyzreader.ui.MaxWidthLinearLayout
                 android:layout_width="match_parent"
@@ -44,33 +27,9 @@
                 android:background="#FFF"
                 android:maxWidth="@dimen/detail_card_max_width"
                 android:orientation="vertical"
-
                 app:elevation="@dimen/card_elevation">
 
-                <LinearLayout
-                    android:id="@+id/meta_bar"
-                    style="@style/DetailMetaBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/detail_metabar_vert_padding"
-                    android:paddingLeft="@dimen/detail_inner_horiz_margin"
-                    android:paddingRight="@dimen/detail_inner_horiz_margin"
-                    android:paddingTop="@dimen/detail_metabar_vert_padding">
-
-                    <TextView
-                        android:id="@+id/article_title"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
-                        style="@style/ArticleDetailTitle"/>
-
-                    <TextView
-                        android:id="@+id/article_byline"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
-                        android:textColor="#8fff" />
-                </LinearLayout>
+                <include layout="@layout/fragment_article_title"/>
 
                 <TextView
                     android:id="@+id/article_body"
@@ -98,6 +57,7 @@
         android:stateListAnimator="@anim/fab_state_list_anim"
         app:borderWidth="0dp"
         app:fabSize="normal"
+        android:elevation="@dimen/fab_elevation"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>
